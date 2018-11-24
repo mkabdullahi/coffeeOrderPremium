@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Coffee Order</string>
+
+    <string-array name="extra_array">
+        <item>With Cream</item>
+        <item>No Cream</item>
+        <item>Soy</item>
+    </string-array>
+    <string-array name="size_array">
+        <item>Small</item>
+        <item>Large</item>
+    </string-array>
+</resources>
