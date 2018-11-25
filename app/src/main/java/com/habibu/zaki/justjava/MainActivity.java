@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     //global variavel to show quantity values
     int quantity = 2;
+    //private Spinner sizeSpinner, extraSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +72,13 @@ public class MainActivity extends AppCompatActivity {
         CheckBox nosugarCheckBox = (CheckBox) findViewById(R.id.nosugar_checkebox);
         boolean hasNosugar = nosugarCheckBox.isChecked();
 
-        Spinner extraSpinner = (Spinner) findViewById(R.id.extra_array);
-        extraSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
 
         Spinner sizeSpinner = (Spinner) findViewById(R.id.size_array);
-        sizeSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        sizeSpinner.setOnItemSelectedListener(new SpinnerOnItemSelectedListner());
+
+        Spinner extraSpinner = (Spinner) findViewById(R.id.extra_array);
+        extraSpinner.setOnItemSelectedListener(new SpinnerOnItemSelectedListner());
 
         EditText editText = (EditText) findViewById(R.id.order_name_field);
         String orderName = editText.getText().toString();
@@ -89,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         int price = calculatePrice (hasWhippedCream, hasChocolate);
-        String orderMessage = creatOrderSummary (price, hasWhippedCream,hasChocolate,hasSugar,hasNosugar,orderName);
+        String orderMessage = createOrderSummary (price, hasWhippedCream,hasChocolate,hasSugar,hasNosugar,sizeSpinner,extraSpinner,orderName);
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("mailto: "));
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         quantityOfCoffees = (TextView) findViewById(R.id.quantity_text_view);
         quantityOfCoffees.setText("" + number);
     }
-    private String creatOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, boolean addSugar, boolean noSugar, String orderName)
+    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, boolean addSugar, boolean noSugar, Spinner sizeSpinner,Spinner extraSpinner,String orderName)
     {
         /*
             Checking the check boxes if selected
@@ -118,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         String chocolateAdded = addChocolate ? "Yes": "No";
         String sugarAdded = addSugar ? "Yes":"No";
         String nosugarAdded = noSugar ? "Yes" : "No";
+        String cupSize = String.valueOf(sizeSpinner.getSelectedItem());
+        String extra = String.valueOf(extraSpinner.getSelectedItem());
 
         String priceMessage = "Name: " + orderName;
         priceMessage +="\nNo. of Cups "+ quantity;
@@ -125,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         priceMessage +="\nChocolate added? " + chocolateAdded;
         priceMessage +="\nSugar added? " + sugarAdded;
         priceMessage +="\nNo sugar selected? " + nosugarAdded;
+        priceMessage +="\nCoffee cup size? " + cupSize;
+        priceMessage +="\nExtra options? " + extra;
         priceMessage +="\nTotal price: $" + price;
         priceMessage +="\nThank you!";
 

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#795548">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -63,9 +69,10 @@
         <Spinner
             android:id="@+id/size_array"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:entries="@array/size_array"/>
 
-        </Spinner>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,9 +84,8 @@
         <Spinner
             android:id="@+id/extra_array"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </Spinner>
+            android:layout_height="match_parent"
+            android:entries="@array/extra_array"/>
 
     </LinearLayout>
 
@@ -100,6 +106,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         style="@style/Layout"
         android:orientation="horizontal"
         android:paddingLeft="43dp">
@@ -111,7 +119,7 @@
             android:background="#8D6E63"
             android:onClick="decrement"
             android:text="Remove"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/quantity_text_view"
@@ -121,7 +129,7 @@
             android:paddingRight="11dp"
             android:text="2"
             android:textColor="@android:color/black"
-            android:textSize="19sp"/>
+            android:textSize="19sp" />
 
 
         <Button
@@ -130,72 +138,17 @@
             android:background="#8D6E63"
             android:onClick="increment"
             android:text="Add"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
         style="@style/Layout"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="45dp"
         android:background="#8D6E63"
         android:onClick="submitOrder"
         android:padding="16dp"
         android:text="Send Order"
         android:textStyle="bold"/>
 
-
-    <!--
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Quantity"
-        android:textAllCaps="true"
-        android:textSize="19dp" />
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="+"
-        android:onClick="increment"/>
-
-    <TextView
-        android:id="@+id/quantity_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="19sp" />
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="-"
-        android:onClick="decrement"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Price"
-        android:textAllCaps="true"
-        android:textSize="19dp" />
-
-    <TextView
-        android:id="@+id/price_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="19sp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="submitOrder"
-        android:paddingLeft="16dp"
-        android:text="Order" />
-
-       -->
-
 </LinearLayout>
+</ScrollView>
