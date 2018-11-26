@@ -125,16 +125,26 @@ public class MainActivity extends AppCompatActivity {
         String cupSize = String.valueOf(sizeSpinner.getSelectedItem());
         String extra = String.valueOf(extraSpinner.getSelectedItem());
 
-        String priceMessage = "Name: " + orderName;
+        String priceMessage = "|---------------------------------------|";
+        priceMessage +="\nName "+ orderName ;
+        priceMessage += "\n\n|---------------------------------------|";
         priceMessage +="\nNo. of Cups "+ quantity;
-        priceMessage +="\nW. Cream added? " + whippedCreamAdded;
-        priceMessage +="\nChocolate added? " + chocolateAdded;
-        priceMessage +="\nSugar added? " + sugarAdded;
-        priceMessage +="\nNo sugar selected? " + nosugarAdded;
-        priceMessage +="\nCoffee cup size? " + cupSize;
-        priceMessage +="\nExtra options? " + extra;
-        priceMessage +="\nTotal price: $" + price;
-        priceMessage +="\nThank you!";
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nW. Cream added ? " + whippedCreamAdded;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nChocolate added ? " + chocolateAdded ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nSugar added? " + sugarAdded ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nNo sugar selected ? " + nosugarAdded ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nCoffee cup size ? " + cupSize ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nExtra options ? " + extra ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\nTotal price: $" + price ;
+        priceMessage += "\n\n|---------------------------------------|";
+        priceMessage +="\n\n\nThank you!";
 
         return priceMessage;
     }

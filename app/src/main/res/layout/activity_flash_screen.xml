@@ -4,7 +4,7 @@
     android:id="@+id/activity_flash_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#bcaaa4"
+    android:background="#d7ccc8"
     tools:context="com.habibu.zaki.justjava.FlashScreen">
 
     <ImageView

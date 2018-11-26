@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class FlashScreen extends AppCompatActivity {
     // Timer da splash screen
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
