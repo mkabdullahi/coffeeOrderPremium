@@ -1,2 +1,2 @@
-# coffeeOrderPremium
+# Coffee Order Premium Version
 A premium version of android coffee order apps, does not collect neither stores user data of any kind. 
